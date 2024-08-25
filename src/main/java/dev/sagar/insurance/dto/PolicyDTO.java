@@ -1,4 +1,4 @@
-package dev.sagar.insurance.policies;
+package dev.sagar.insurance.dto;
 
 import jakarta.validation.constraints.DecimalMin;
 import jakarta.validation.constraints.NotBlank;

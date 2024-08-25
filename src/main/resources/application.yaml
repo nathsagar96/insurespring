@@ -1,8 +1,5 @@
 server:
   port: 8080
-  error:
-    include-message: always
-    include-binding-errors: always
 
 spring:
   application:
@@ -12,8 +9,6 @@ spring:
     driver-class-name: org.h2.Driver
     username: sa
     password: password
-    hikari:
-      maximum-pool-size: 10
   h2:
     console:
       enabled: true

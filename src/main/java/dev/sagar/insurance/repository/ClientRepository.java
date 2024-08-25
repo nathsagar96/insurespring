@@ -1,5 +1,6 @@
-package dev.sagar.insurance.clients;
+package dev.sagar.insurance.repository;
 
+import dev.sagar.insurance.entity.Client;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

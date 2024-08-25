@@ -1,5 +1,7 @@
-package dev.sagar.insurance.claims;
+package dev.sagar.insurance.controller;
 
+import dev.sagar.insurance.dto.ClaimDTO;
+import dev.sagar.insurance.service.ClaimService;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

@@ -1,4 +1,4 @@
-package dev.sagar.insurance.clients;
+package dev.sagar.insurance.dto;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;

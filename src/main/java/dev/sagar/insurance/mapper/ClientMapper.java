@@ -1,5 +1,7 @@
-package dev.sagar.insurance.clients;
+package dev.sagar.insurance.mapper;
 
+import dev.sagar.insurance.dto.ClientDTO;
+import dev.sagar.insurance.entity.Client;
 import org.springframework.stereotype.Component;
 
 @Component

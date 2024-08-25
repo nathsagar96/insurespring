@@ -1,6 +1,10 @@
-package dev.sagar.insurance.policies;
+package dev.sagar.insurance.service;
 
+import dev.sagar.insurance.dto.PolicyDTO;
+import dev.sagar.insurance.entity.Policy;
 import dev.sagar.insurance.exception.ResourceNotFoundException;
+import dev.sagar.insurance.mapper.PolicyMapper;
+import dev.sagar.insurance.repository.PolicyRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

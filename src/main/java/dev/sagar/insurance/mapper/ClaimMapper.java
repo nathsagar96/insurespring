@@ -1,8 +1,10 @@
-package dev.sagar.insurance.claims;
+package dev.sagar.insurance.mapper;
 
+import dev.sagar.insurance.dto.ClaimDTO;
+import dev.sagar.insurance.entity.Claim;
+import dev.sagar.insurance.entity.Policy;
 import dev.sagar.insurance.exception.ResourceNotFoundException;
-import dev.sagar.insurance.policies.Policy;
-import dev.sagar.insurance.policies.PolicyRepository;
+import dev.sagar.insurance.repository.PolicyRepository;
 import org.springframework.stereotype.Component;
 
 @Component
