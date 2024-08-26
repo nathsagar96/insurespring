@@ -5,20 +5,17 @@ import dev.sagar.insurance.entity.Policy;
 import dev.sagar.insurance.exception.ResourceNotFoundException;
 import dev.sagar.insurance.mapper.PolicyMapper;
 import dev.sagar.insurance.repository.PolicyRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
+@RequiredArgsConstructor
 public class PolicyService {
 
     private final PolicyRepository policyRepository;
     private final PolicyMapper policyMapper;
-
-    public PolicyService(PolicyRepository policyRepository, PolicyMapper policyMapper) {
-        this.policyRepository = policyRepository;
-        this.policyMapper = policyMapper;
-    }
 
     public List<PolicyDTO> getAllPolicies() {
         return policyRepository.findAll().stream().map(policyMapper::toDto).toList();

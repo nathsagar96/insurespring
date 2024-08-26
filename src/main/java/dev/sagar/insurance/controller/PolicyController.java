@@ -3,6 +3,7 @@ package dev.sagar.insurance.controller;
 import dev.sagar.insurance.dto.PolicyDTO;
 import dev.sagar.insurance.service.PolicyService;
 import jakarta.validation.Valid;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -17,14 +18,11 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
+@RequiredArgsConstructor
 @RequestMapping("/api/policies")
 public class PolicyController {
 
     private final PolicyService policyService;
-
-    public PolicyController(PolicyService policyService) {
-        this.policyService = policyService;
-    }
 
     @GetMapping
     public ResponseEntity<List<PolicyDTO>> getAllPolicies() {

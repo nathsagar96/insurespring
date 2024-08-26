@@ -5,20 +5,17 @@ import dev.sagar.insurance.entity.Claim;
 import dev.sagar.insurance.exception.ResourceNotFoundException;
 import dev.sagar.insurance.mapper.ClaimMapper;
 import dev.sagar.insurance.repository.ClaimRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
+@RequiredArgsConstructor
 public class ClaimService {
 
     private final ClaimRepository claimRepository;
     private final ClaimMapper claimMapper;
-
-    public ClaimService(ClaimRepository claimRepository, ClaimMapper claimMapper) {
-        this.claimRepository = claimRepository;
-        this.claimMapper = claimMapper;
-    }
 
     public List<ClaimDTO> getAllClaims() {
         return claimRepository.findAll().stream().map(claimMapper::toDto).toList();

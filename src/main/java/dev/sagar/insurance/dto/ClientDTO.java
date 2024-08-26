@@ -8,6 +8,7 @@ import jakarta.validation.constraints.Size;
 import java.time.LocalDate;
 
 public record ClientDTO(
+
         Long id,
 
         @NotBlank(message = "Name is mandatory")

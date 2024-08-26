@@ -3,6 +3,7 @@ package dev.sagar.insurance.controller;
 import dev.sagar.insurance.dto.ClaimDTO;
 import dev.sagar.insurance.service.ClaimService;
 import jakarta.validation.Valid;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -17,14 +18,11 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
+@RequiredArgsConstructor
 @RequestMapping("/api/claims")
 public class ClaimController {
 
     private final ClaimService claimService;
-
-    public ClaimController(ClaimService claimService) {
-        this.claimService = claimService;
-    }
 
     @GetMapping
     public ResponseEntity<List<ClaimDTO>> getAllClaims() {

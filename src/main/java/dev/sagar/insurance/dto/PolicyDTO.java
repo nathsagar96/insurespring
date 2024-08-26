@@ -10,6 +10,7 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 
 public record PolicyDTO(
+
         Long id,
 
         @NotBlank(message = "Policy Number is mandatory")

@@ -5,16 +5,14 @@ import dev.sagar.insurance.entity.Client;
 import dev.sagar.insurance.entity.Policy;
 import dev.sagar.insurance.exception.ResourceNotFoundException;
 import dev.sagar.insurance.repository.ClientRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
 @Component
+@RequiredArgsConstructor
 public class PolicyMapper {
 
     private final ClientRepository clientRepository;
-
-    public PolicyMapper(ClientRepository clientRepository) {
-        this.clientRepository = clientRepository;
-    }
 
     public PolicyDTO toDto(Policy policy) {
         return new PolicyDTO(
