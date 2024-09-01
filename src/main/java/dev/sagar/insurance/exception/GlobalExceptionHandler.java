@@ -13,10 +13,20 @@ import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * A global exception handler for the application. It catches and handles different types of exceptions
+ * and returns appropriate HTTP responses with meaningful error messages.
+ */
 @RestControllerAdvice
 public class GlobalExceptionHandler {
 
-    // Handle validation errors for DTOs
+    /**
+     * Handles MethodArgumentNotValidException exceptions.
+     *
+     * @param ex      The exception to be handled.
+     * @param request The web request context.
+     * @return A ResponseEntity with a JSON body containing error details and an HTTP status code of 400 (Bad Request).
+     */
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public ResponseEntity<Map<String, Object>> handleValidationExceptions(MethodArgumentNotValidException ex, WebRequest request) {
         Map<String, Object> body = new HashMap<>();
@@ -28,7 +38,13 @@ public class GlobalExceptionHandler {
         return new ResponseEntity<>(body, HttpStatus.BAD_REQUEST);
     }
 
-    // Handle other constraint violations
+    /**
+     * Handles ConstraintViolationException exceptions.
+     *
+     * @param ex      The exception to be handled.
+     * @param request The web request context.
+     * @return A ResponseEntity with a JSON body containing error details and an HTTP status code of 400 (Bad Request).
+     */
     @ExceptionHandler(ConstraintViolationException.class)
     public ResponseEntity<Map<String, Object>> handleConstraintViolationException(ConstraintViolationException ex, WebRequest request) {
         Map<String, Object> body = new HashMap<>();
@@ -40,7 +56,13 @@ public class GlobalExceptionHandler {
         return new ResponseEntity<>(body, HttpStatus.BAD_REQUEST);
     }
 
-    // Handle custom exceptions (like entity not found)
+    /**
+     * Handles ResourceNotFoundException exceptions.
+     *
+     * @param ex      The exception to be handled.
+     * @param request The web request context.
+     * @return A ResponseEntity with a JSON body containing error details and an HTTP status code of 404 (Not Found).
+     */
     @ExceptionHandler(ResourceNotFoundException.class)
     public ResponseEntity<Map<String, Object>> handleResourceNotFoundException(ResourceNotFoundException ex, WebRequest request) {
         Map<String, Object> body = new HashMap<>();
@@ -52,7 +74,13 @@ public class GlobalExceptionHandler {
         return new ResponseEntity<>(body, HttpStatus.NOT_FOUND);
     }
 
-    // Handle generic exceptions
+    /**
+     * Handles generic exceptions.
+     *
+     * @param ex      The exception to be handled.
+     * @param request The web request context.
+     * @return A ResponseEntity with a JSON body containing error details and an HTTP status code of 500 (Internal Server Error).
+     */
     @ExceptionHandler(Exception.class)
     public ResponseEntity<Map<String, Object>> handleGenericException(Exception ex, WebRequest request) {
         Map<String, Object> body = new HashMap<>();
@@ -64,7 +92,12 @@ public class GlobalExceptionHandler {
         return new ResponseEntity<>(body, HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
-    // Helper method to format validation errors
+    /**
+     * Extracts validation errors from a MethodArgumentNotValidException.
+     *
+     * @param ex The exception to extract errors from.
+     * @return A string representation of the validation errors.
+     */
     private String getValidationErrors(MethodArgumentNotValidException ex) {
         Map<String, String> errors = new HashMap<>();
         for (FieldError error : ex.getBindingResult().getFieldErrors()) {
