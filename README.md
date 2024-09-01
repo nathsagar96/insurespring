@@ -2,10 +2,10 @@
 
 ## Project Description
 
-The Insurance Management Platform is a Spring Boot application built to manage clients, policies, and claims
-efficiently. It allows users to perform CRUD operations on these entities while ensuring data integrity, validation, and
-a seamless API experience. The application uses Spring Boot 3, Java 17, and follows modern Spring practices with
-features like Java Records for DTOs, global exception handling, and input validation.
+The Insurance Management Platform is a Spring Boot application designed for efficiently managing clients, policies, and
+claims. It allows users to perform CRUD operations on these entities while ensuring data integrity, validation, and a
+seamless API experience. The application uses Spring Boot 3, Java 21, and modern Spring practices, including features
+like Java Records for DTOs, global exception handling, and input validation.
 
 ## Features
 
@@ -18,7 +18,7 @@ features like Java Records for DTOs, global exception handling, and input valida
 
 ## Project Structure
 
-The project follows a standard Spring Boot structure:
+The project follows a package-by-feature structure:
 
 ```
 insurance-management/
@@ -26,43 +26,35 @@ insurance-management/
 │   ├── main/
 │   │   ├── java/
 │   │   │   └── dev/sagar/insurance/
-│   │   │       ├── config/            # Configuration classes (e.g., Spring beans, properties)
-│   │   │       ├── controller/        # REST Controllers for handling HTTP requests
-│   │   │       ├── dto/               # Data Transfer Objects (DTOs) using Java Records
-│   │   │       ├── entity/            # JPA Entities representing database models
-│   │   │       ├── exception/         # Custom exceptions and global exception handling
-│   │   │       ├── mapper/            # Mappers for converting between entities and DTOs
-│   │   │       ├── repository/        # Spring Data JPA Repositories for data access
-│   │   │       ├── service/           # Business logic and service classes
+│   │   │       ├── claim/                # Logic and structure related to Claims
+│   │   │       ├── client/               # Logic and structure related to Clients
+│   │   │       ├── policy/               # Logic and structure related to Policies
+│   │   │       ├── config/               # Configuration classes (e.g., Spring beans, properties)
+│   │   │       ├── exception/            # Global exception handling and custom exceptions
 │   │   │       └── InsuranceManagementApplication.java  # Main application entry point
 │   │   └── resources/
-│   │       └── application.yaml        # Application configuration
+│   │       └── application.yaml          # Application configuration
 │   └── test/
 │       └── java/
 │           └── dev/sagar/insurance/
-│               ├── controller/
-│               ├── service/
-│               └── mapper/
-├── pom.xml                            # Maven build file
-├── README.md                          # Project documentation
-├── Dockerfile                         # Docker build file
-└── LICENSE                            # Project license
+│               ├── claim/
+│               ├── client/
+│               └── policy/
+├── pom.xml                               # Maven build file
+├── README.md                             # Project documentation
+├── Dockerfile                            # Docker build file
+└── LICENSE                               # Project license
 ```
 
 ### Key Packages
 
-- **config**: Configuration classes (e.g., Spring beans, properties).
-- **controller**: Contains REST controllers that expose APIs for clients, policies, and claims.
-- **dto**: Holds Java Records used as DTOs for request and response objects.
-- **entity**: JPA entities that represent database tables.
-- **exception**: Global exception handling and custom exceptions.
-- **mapper**: Converts entities to DTOs and vice versa.
-- **repository**: JPA repositories for interacting with the database.
-- **service**: Business logic for clients, policies, and claims.
+- **claim, client, policy**: Each package contains the logic and related structures.
+- **config**: Contains configuration classes (e.g., Spring beans, properties).
+- **exception**: Handles global exceptions and contains custom exceptions.
 
 ## Prerequisites
 
-- Java 17
+- Java 21
 - Maven 3.8+
 - Docker (optional, for running the application with Docker)
 
