@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: insurance-management-system
+    name: insure-spring
   datasource:
     url: jdbc:h2:mem:insurance-db
     driver-class-name: org.h2.Driver

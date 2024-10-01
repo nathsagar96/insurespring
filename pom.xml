@@ -11,9 +11,9 @@
     </parent>
 
     <groupId>dev.sagar</groupId>
-    <artifactId>insurance-management</artifactId>
+    <artifactId>insure-spring</artifactId>
     <version>1.0.0</version>
-    <name>insurance-management</name>
+    <name>insure-spring</name>
     <description>insurance management platform</description>
 
     <properties>

@@ -1,8 +1,8 @@
-# Insurance Management Platform
+# Insure Spring
 
 ## Project Description
 
-The Insurance Management Platform is a Spring Boot application designed for efficiently managing clients, policies, and
+The Insure Spring is a Spring Boot application designed for efficiently managing clients, policies, and
 claims. It allows users to perform CRUD operations on these entities while ensuring data integrity, validation, and a
 seamless API experience. The application uses Spring Boot 3, Java 21, and modern Spring practices, including features
 like Java Records for DTOs, global exception handling, and input validation.
@@ -21,7 +21,7 @@ like Java Records for DTOs, global exception handling, and input validation.
 The project follows a package-by-feature structure:
 
 ```
-insurance-management/
+insure-spring/
 ├── src/
 │   ├── main/
 │   │   ├── java/
@@ -31,7 +31,7 @@ insurance-management/
 │   │   │       ├── policy/               # Logic and structure related to Policies
 │   │   │       ├── config/               # Configuration classes (e.g., Spring beans, properties)
 │   │   │       ├── exception/            # Global exception handling and custom exceptions
-│   │   │       └── InsuranceManagementApplication.java  # Main application entry point
+│   │   │       └── InsureSpringApplication.java  # Main application entry point
 │   │   └── resources/
 │   │       └── application.yaml          # Application configuration
 │   └── test/
@@ -63,8 +63,8 @@ insurance-management/
 1. **Clone the Repository:**
 
    ```bash
-   git clone https://github.com/nathsagar96/insurance-management.git
-   cd insurance-management
+   git clone https://github.com/nathsagar96/insure-spring.git
+   cd insure-spring
    ```
 
 2. **Build the Application:**
@@ -92,13 +92,13 @@ insurance-management/
     - Build the Docker image:
 
       ```bash
-      docker build -t insurance-management .
+      docker build -t insure-spring .
       ```
 
     - Run the Docker container:
 
       ```bash
-      docker run -p 8080:8080 insurance-management
+      docker run -p 8080:8080 insure-spring
       ```
 
 ## API Documentation
