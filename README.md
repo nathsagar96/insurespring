@@ -116,3 +116,7 @@ data.
 
 If you want to contribute to this project, feel free to submit a pull request. For major changes, please open an issue
 first to discuss what you would like to change.
+
+## Todo
+
+- Add security to the application
