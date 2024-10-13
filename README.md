@@ -1,4 +1,4 @@
-# Insure Spring
+# InsureSpring
 
 ## Project Description
 
@@ -21,7 +21,7 @@ like Java Records for DTOs, global exception handling, and input validation.
 The project follows a package-by-feature structure:
 
 ```
-insure-spring/
+insurespring/
 ├── src/
 │   ├── main/
 │   │   ├── java/
@@ -31,7 +31,7 @@ insure-spring/
 │   │   │       ├── policy/               # Logic and structure related to Policies
 │   │   │       ├── config/               # Configuration classes (e.g., Spring beans, properties)
 │   │   │       ├── exception/            # Global exception handling and custom exceptions
-│   │   │       └── InsureSpringApplication.java  # Main application entry point
+│   │   │       └── Application.java  # Main application entry point
 │   │   └── resources/
 │   │       └── application.yaml          # Application configuration
 │   └── test/
@@ -63,8 +63,8 @@ insure-spring/
 1. **Clone the Repository:**
 
    ```bash
-   git clone https://github.com/nathsagar96/insure-spring.git
-   cd insure-spring
+   git clone https://github.com/nathsagar96/insurespring.git
+   cd insurespring
    ```
 
 2. **Build the Application:**
@@ -92,13 +92,13 @@ insure-spring/
     - Build the Docker image:
 
       ```bash
-      docker build -t insure-spring .
+      docker build -t insurespring .
       ```
 
     - Run the Docker container:
 
       ```bash
-      docker run -p 8080:8080 insure-spring
+      docker run -p 8080:8080 insurespring
       ```
 
 ## API Documentation
